@@ -9,7 +9,7 @@ script:
 
 after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-  - docker tag back $DOCKER_USER/voting-tg-app-backend:$TRAVIS_BUILD_NUMBER
+  - docker tag voting-tg-app-backend $DOCKER_USER/voting-tg-app-backend:$TRAVIS_BUILD_NUMBER
   - docker push $DOCKER_USER/voting-tg-app-backend:$TRAVIS_BUILD_NUMBER
-  - docker tag back $DOCKER_USER/voting-tg-app-backend:latest
+  - docker tag voting-tg-app-backend $DOCKER_USER/voting-tg-app-backend:latest
   - docker push $DOCKER_USER/voting-tg-app-backend:latest
