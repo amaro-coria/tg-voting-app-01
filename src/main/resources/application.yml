@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: "jdbc:db2://dashdb-txn-sbox-yp-dal09-08.services.dal.bluemix.net:50001/BLUDB:sslConnection=true;"
+    username: fbv79453
+    password: "v9cvqjw42-q1zd1j"
