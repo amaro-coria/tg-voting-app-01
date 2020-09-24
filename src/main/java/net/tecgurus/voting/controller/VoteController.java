@@ -1,5 +1,6 @@
 package net.tecgurus.voting.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import net.tecgurus.voting.dto.ConceptRequest;
 import net.tecgurus.voting.dto.VoteDTO;
 import net.tecgurus.voting.dto.VoteRequest;
@@ -12,6 +13,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/vote")
+@CrossOrigin(value = "*")
+@Slf4j
 public class VoteController {
 
     @Autowired
@@ -19,6 +22,7 @@ public class VoteController {
 
     @GetMapping
     public ResponseEntity<List<VoteDTO>> findData(){
+        log.info("Se estan pidiendo datos en la aplicacion");
         List<VoteDTO> voteDTOS = voteService.getData();
         if(voteDTOS.isEmpty()){
             return ResponseEntity.notFound().build();
